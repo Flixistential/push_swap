@@ -1,7 +1,13 @@
 NAME = push_swap.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-src =	main.c
+src =	main.c\
+		push_swap_utils.c\
+		push_swap_utils2.c\
+		moves.c\
+		moves2.c\
+		ft_atol_toi.c\
+		sort.c
 		
 OBJS = ${src:.c=.o}
 LIBC = ar rcs
