@@ -6,7 +6,7 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:20:27 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/04 11:27:30 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/04/10 14:21:40 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	*ft_splatoi(char *str, size_t c, int *result)
 		k = ft_atol_toi(&str[i]);
 		if(ft_numlen(&str[i]) >= 11 || k > 2147483647 || k < -2147483648)
 		{
-			ft_printf("Invalid number\n");
+			ft_printf("Error\n");
 			return(NULL);
 		}
 		result[j] = k;

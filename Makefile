@@ -7,7 +7,9 @@ src =	main.c\
 		moves.c\
 		moves2.c\
 		ft_atol_toi.c\
-		sort.c
+		sort.c\
+		sort_utils.c\
+		sort5_utils.c
 		
 OBJS = ${src:.c=.o}
 LIBC = ar rcs
@@ -27,6 +29,9 @@ ${LDIR}${LIBFT}:
 clean :
 		${REMOVE} ${OBJS}
 		${REMOVE} ${LDIR}*.o
+
+vis: all
+	./push_swap_visualizer/build/bin/visualizer
  
 fclean :clean
 		${REMOVE} ${NAME}
