@@ -6,7 +6,7 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:44:59 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/13 17:59:06 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/04/13 19:05:28 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,14 +147,30 @@ void	sort5(t_list **a, t_list **b)
 
 size_t  ft_count_moves(t_list **a, t_list **b, size_t pos_a, size_t pos_b)
 {
-    size_t  *temp_a;
-    size_t  moves;
-    int     i;
-
-    i = 0;
-    moves = 0;
-    temp_a = *a;
+    size_t  biggest_list
+    size_t	pos;
+	size_t  moves;
+    
+	pos = 0;
+	moves = 0;
+	if (ft_countlist(a) > ft_countlist(b))
+		biggest_list = ft_countlist(a);
+			else
+		biggest_list = ft_countlist(a);
+	if (pos_a > (biggest_list / 2) && pos_a > (biggest_list / 2))
+	{
+		while (pos_a !> biggest_list && pos_b  !> biggest_list)
+		{
+			pos_a++;
+			pos_b++;
+			move++;
+		}
+	}
+	else
+	{ 
+		while(pos_a ||)
 }
+
 size_t  ft_count_to_small(t_list **a)
 {
 	t_list	*temp;
