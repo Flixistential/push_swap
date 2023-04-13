@@ -14,8 +14,8 @@ src =	main.c\
 OBJS = ${src:.c=.o}
 LIBC = ar rcs
 REMOVE = rm -f
-LIBFT = libft.a
-LDIR = libft/
+LIBFT = libftps.a
+LDIR = libftps/
 
 ${NAME}:${OBJS} ${LDIR}${LIBFT} 
 		cp ${LDIR}${LIBFT} ${NAME} 

@@ -6,22 +6,22 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 00:00:54 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/09 19:13:59 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/04/13 17:45:40 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "libftps/libftps.h"
 # include <limits.h>
 
 int		main(int argc, char *argv[]);
 int		ft_isspace(char c);
 int		ft_isdigit(int c);
 int		ft_isdigitsigned(char *str);
-void	print_elem(void *content);
-int		*ft_splatoi(char *str, size_t c, int *result);
+void	print_elem(int content);
+int		ft_splatoi(int argv, char **str, t_list **a);
 size_t	word_count_space(char *s);
 int		ft_isdigitsigned(char *str);
 int		ft_isdigit(int c);
@@ -56,5 +56,9 @@ int 	ft_islstbig(t_list **a);
 int		ft_smaller_then_lst(t_list **a, t_list **b);
 int		ft_bigger_then_lst(t_list **a, t_list **b);
 size_t 	ft_findsmallest(t_list *lst);
+void	ft_lstclearps(t_list **lst);
+size_t  ft_count_to_small(t_list **a);
+size_t	ft_position(t_list **a, size_t index);
+size_t  ft_count_moves(t_list **a, t_list **b, size_t pos_a, size_t pos_b);
 
 #endif

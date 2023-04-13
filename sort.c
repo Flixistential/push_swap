@@ -6,7 +6,7 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 10:43:58 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/10 13:14:58 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/04/12 17:39:49 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_lstindex(t_list **a)
 	{
 		while (temp2)
 		{
-			if (*temp->content >= *temp2->content)
+			if (temp->content >= temp2->content)
 				index++;
 			temp2 = temp2->next;
 		}

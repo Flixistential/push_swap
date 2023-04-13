@@ -6,7 +6,7 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:20:27 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/10 14:21:40 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/04/12 18:35:20 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,35 +65,42 @@ size_t	word_count_space(char *s)
 	while (s[i])
 	{
 		if (ft_isspace(s[i]) && !ft_isspace(s[i + 1]) && s[i + 1] != '\0')
-		count++;
+			count++;
 		i++;
 	}
 	return (count);
 }
 
-int	*ft_splatoi(char *str, size_t c, int *result)
+int	ft_splatoi(int argc, char **argv, t_list **a)
 {
 	size_t	i;
 	size_t	j;
 	long	k;
 
 	i = 0;
-	j = 0;
 	k = 0;
-	while (str[i] && j < c)
+	j = 1;
+	while (argv[j] && j < ((size_t)argc))
 	{
-		while (ft_isspace(str[i]))
-			i++;
-		k = ft_atol_toi(&str[i]);
-		if(ft_numlen(&str[i]) >= 11 || k > 2147483647 || k < -2147483648)
+		while (argv[j][i])
 		{
-			ft_printf("Error\n");
-			return(NULL);
+			while (ft_isspace(argv[j][i]) && argv[j][i] != '\0')
+				i++;
+			if (argv[j][i] == '\0')
+				break ;	
+			k = ft_atol_toi(&argv[j][i]);
+			if (ft_numlen(&argv[j][i]) >= 11 || k > 2147483647
+				|| k < -2147483648)
+			{
+				ft_printf("Error\n");
+				return (-1);
+			}
+			ft_lstadd_back(a, ft_lstnew((int)k));
+			while (!ft_isspace(argv[j][i]) && argv[j][i] != '\0')
+				i++;
 		}
-		result[j] = k;
-			j++;
-		while (!ft_isspace(str[i]) && j < c)
-			i++;
+		j++;
+		i = 0;	
 	}
-	return (result);
+	return (0);
 }
