@@ -6,7 +6,7 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:20:27 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/12 18:35:20 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/08/28 20:24:50 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,20 @@ int	ft_isdigitsigned(char *str)
 
 	i = 0;
 	j = 0;
-	if (!str[i])
+	if (!str || !str[i])
+		return (0);
+	if (ft_empty(str))
 		return (0);
 	while (str[i])
 	{
 		j = i;
 		if (ft_isspace(str[i]))
 			i++;
-		if ((str[i] == '-') && (str[i +1] >= '0' && str[i +1] <= '9')
+		if ((str[i] == '-') && (str[i + 1] >= '0' && str[i + 1] <= '9')
 			&& (ft_isspace(str[i - 1]) || !str[i -1]))
-		i++;
+			i++;
 		if (str[i] >= '0' && str[i] <= '9')
-		i++;
+			i++;
 		if (str[i] == '\0')
 			return (1);
 		if (i == j)
@@ -75,10 +77,8 @@ int	ft_splatoi(int argc, char **argv, t_list **a)
 {
 	size_t	i;
 	size_t	j;
-	long	k;
 
 	i = 0;
-	k = 0;
 	j = 1;
 	while (argv[j] && j < ((size_t)argc))
 	{
@@ -87,20 +87,16 @@ int	ft_splatoi(int argc, char **argv, t_list **a)
 			while (ft_isspace(argv[j][i]) && argv[j][i] != '\0')
 				i++;
 			if (argv[j][i] == '\0')
-				break ;	
-			k = ft_atol_toi(&argv[j][i]);
-			if (ft_numlen(&argv[j][i]) >= 11 || k > 2147483647
-				|| k < -2147483648)
-			{
-				ft_printf("Error\n");
+				break ;
+			if (ft_numlen(&argv[j][i]) >= 11 || (ft_atli(&argv[j][i]) 
+					> INT_MAX) || (ft_atli(&argv[j][i]) < INT_MIN))
 				return (-1);
-			}
-			ft_lstadd_back(a, ft_lstnew((int)k));
+			ft_lstadd_back(a, ft_lstnew(((int)ft_atli(&argv[j][i]))));
 			while (!ft_isspace(argv[j][i]) && argv[j][i] != '\0')
 				i++;
 		}
 		j++;
-		i = 0;	
+		i = 0;
 	}
 	return (0);
 }

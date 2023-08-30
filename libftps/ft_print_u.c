@@ -6,7 +6,7 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:56:06 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/13 16:13:15 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/08/28 18:57:15 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ int	ft_print_u(unsigned int num)
 	}
 	else
 	{
-	str = ft_itoau(num);
-	len += ft_print_stru(str);
+		str = ft_itoau(num);
+		len += ft_print_stru(str);
 		free(str);
 	}
 	return (len);

@@ -1,4 +1,4 @@
-NAME = push_swap.a
+NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 src =	main.c\
@@ -9,17 +9,21 @@ src =	main.c\
 		ft_atol_toi.c\
 		sort.c\
 		sort_utils.c\
-		sort5_utils.c
+		sort5_utils.c\
+		final_algo.c\
+		count_moves.c\
+		sort_case.c\
+		push_swap_utils3.c\
+		push_swap_utils4.c\
+		sort_case5.c
 		
 OBJS = ${src:.c=.o}
-LIBC = ar rcs
 REMOVE = rm -f
 LIBFT = libftps.a
 LDIR = libftps/
 
-${NAME}:${OBJS} ${LDIR}${LIBFT} 
-		cp ${LDIR}${LIBFT} ${NAME} 
-		${LIBC} ${NAME} ${OBJS}
+${NAME}:${OBJS} ${LDIR}${LIBFT}
+		$(CC) $(CFLAGS) $(src) ${LDIR}${LIBFT} -o $(NAME)
 
 all:${LDIR}${LIBFT} ${NAME}
 

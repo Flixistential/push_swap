@@ -6,14 +6,14 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 11:51:39 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/13 16:13:15 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/08/28 18:55:32 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftps.h"
 
 size_t	ft_strlen(const char *str)
-{	
+{
 	int	i;
 
 	i = 0;

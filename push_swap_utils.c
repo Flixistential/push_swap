@@ -6,7 +6,7 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 22:28:26 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/08 11:24:01 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/08/28 13:53:41 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	reverse_rotate(t_list **head)
 	t_list	*temp;
 	t_list	*temp2;
 
-	temp = 	NULL;
-	temp2 =	NULL;
+	temp = NULL;
+	temp2 = NULL;
 	if (!head | !*head | !(*head)->next)
 		return ;
 	temp = ft_lst_prev_last(head);
@@ -62,8 +62,8 @@ void	rotate(t_list **head)
 	t_list	*temp;
 	t_list	*temp2;
 
-	temp = 	NULL;
-	temp2 =	NULL;
+	temp = NULL;
+	temp2 = NULL;
 	if (!head | !*head | !(*head)->next)
 		return ;
 	temp = (*head)->next;
@@ -75,8 +75,8 @@ void	rotate(t_list **head)
 
 void	push(t_list **src, t_list **dst, char c)
 {
-	t_list *temp;
-	t_list *temp2;
+	t_list	*temp;
+	t_list	*temp2;
 
 	if (!src || !*src)
 		return ;

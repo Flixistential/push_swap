@@ -6,14 +6,14 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 21:24:15 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/04 12:57:30 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/08/28 20:21:19 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 size_t	ft_numlen(char *str)
-{	
+{
 	int	i;
 
 	i = 0;
@@ -21,12 +21,12 @@ size_t	ft_numlen(char *str)
 		return (i);
 	while (str[i] != '\0' && !ft_isspace(str[i]))
 		i++;
-	if(str[0] == '-')
+	if (str[0] == '-')
 		i--;
 	return (i);
 }
 
-long	ft_atol_toi(char *str)
+long	ft_atli(char *str)
 {
 	int		i;
 	long	sign;

@@ -6,14 +6,14 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 12:01:52 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/13 16:13:15 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/08/28 18:54:52 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftps.h"
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
-{	
+{
 	size_t	i;
 	size_t	j;
 

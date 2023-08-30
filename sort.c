@@ -6,7 +6,7 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 10:43:58 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/12 17:39:49 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/08/28 20:07:58 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,35 +74,20 @@ void	ft_lstindex(t_list **a)
 void	sort5(t_list **a, t_list **b)
 {
 	t_list	*temp;
-	int i;
+	int		i;
 
 	i = 0;
 	temp = NULL;
-	while(ft_countlist(*a) != 3)
+	while (ft_countlist(*a) != 3)
 		push(a, b, 'b');
 	sort3 (a);
 	while ((*b) != NULL)
 	{
 		if ((ft_bigger_then_lst(a, b) == 1 && (*b)))
-		{
-			while (ft_islstsmall(a) != 1)
-				ra(a);
-			if (ft_islstsmall(a) == 1)
-				push(b, a, 'a');
-		}
+			ft_case1(a, b);
 		if ((ft_smaller_then_lst(a, b) == 1 && (*b)))
-		{
-			while (ft_islstsmall(a) != 1)
-				ra(a);
-			if (ft_islstsmall(a) == 1) 
-				push(b, a, 'a');			
-		}
+			ft_case2(a, b);
 		if (!ft_bigger_then_lst(a, b) && !ft_smaller_then_lst(a, b) && (*b))
-		{
-			if ((*b)->i > ft_lstlast(*a)->i && (*b)->i < (*a)->i)
-				push(b, a, 'a');
-			else
-				ra(a);
-		}
+			ft_case3(a, b);
 	}
 }

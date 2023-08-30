@@ -6,7 +6,7 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:54:00 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/13 16:13:15 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/08/28 18:54:31 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ size_t	findend(char const *s1, char const *set)
 		{
 			if (s1[i] == set[j])
 			{
-			i--;
-			j = -1;
+				i--;
+				j = -1;
 			}
 			j++;
 		}
@@ -48,11 +48,11 @@ size_t	findstart(char const *s1, char const *set)
 	while (i < ft_strlen(set) && set[j])
 	{
 		while (set[j])
-		{	
+		{
 			if (s1[i] == set[j])
 			{
-			i++;
-			j = -1;
+				i++;
+				j = -1;
 			}
 			j++;
 		}
@@ -77,7 +77,7 @@ char	*ft_strtrim(const char *s1, char const *set)
 	ptr = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!ptr || !s1)
 		return (NULL);
-		end = end - start;
+	end = end - start;
 	while (i < (end))
 	{
 		ptr[i++] = s1[start++];

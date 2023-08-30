@@ -6,7 +6,7 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:09:23 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/13 16:13:15 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/08/28 18:56:52 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ void	ft_putnbr_fd(int n, int fd)
 		}
 		else
 			ft_putchar_fd(n + '0', fd);
-	}	
+	}
 }

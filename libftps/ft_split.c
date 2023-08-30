@@ -6,7 +6,7 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 20:35:39 by fboivin           #+#    #+#             */
-/*   Updated: 2023/04/13 16:13:15 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/08/28 18:53:33 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	word_count(char const *s, char c)
 	while (s[i])
 	{
 		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
-		count++;
+			count++;
 		i++;
 	}
 	return (count);
@@ -77,9 +77,9 @@ char	**splitter(char **split, const char *s, char c, size_t count)
 		while (s[i])
 		{
 			while (s[i] == c)
-			i++;
+				i++;
 			while (s[i + j] != c && s[i + j] != '\0')
-			j++;
+				j++;
 			split[index] = word_maker(&s[i], (j));
 			if (!split[index])
 				return (ft_free(split));
@@ -99,7 +99,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-		count = word_count(s, c);
+	count = word_count(s, c);
 	if (count == 0 || ft_strlen(s) == 0)
 	{
 		split = (char **)malloc(sizeof(char *));
